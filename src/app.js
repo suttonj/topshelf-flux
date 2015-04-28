@@ -15,6 +15,8 @@ import App from './components/App';
 import Dispatcher from './core/Dispatcher';
 import AppActions from './actions/AppActions';
 import ActionTypes from './constants/ActionTypes';
+import BookLists from './api/books.js';
+import mockapi from './api/mockapi';
 
 let path = decodeURI(window.location.pathname);
 let setMetaTag = (name, content) => {
@@ -33,9 +35,15 @@ let setMetaTag = (name, content) => {
 };
 
 function run() {
+    //Mock data
+  mockapi.init();
+  let books = BookLists.getBookData();
+  console.log(books);
+  
   // Render the top-level React component
   let props = {
     path: path,
+    books: books,
     onSetTitle: (title) => document.title = title,
     onSetMeta: setMetaTag,
     onPageNotFound: emptyFunction

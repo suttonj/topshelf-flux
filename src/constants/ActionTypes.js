@@ -13,6 +13,13 @@ export default keyMirror({
   LOAD_PAGE: null,
   LOAD_PAGE_SUCCESS: null,
   LOAD_PAGE_ERROR: null,
-  CHANGE_LOCATION: null
+  CHANGE_LOCATION: null,
+  
+  LOAD_LIST: null,
+  LOAD_BOOKS: null,
+
+  SET_SELECTED: null,
+  RECEIVE_DATA: null,
+  SELECT_BOOK: null
 
 });

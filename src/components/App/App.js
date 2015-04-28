@@ -13,6 +13,7 @@ import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 import Navbar from '../Navbar';
 import ContentPage from '../ContentPage';
+import BookList from '../BookList';
 import NotFoundPage from '../NotFoundPage';
 import setViewport from './setViewport';
 
@@ -20,6 +21,7 @@ class App {
 
   static propTypes = {
     path: PropTypes.string.isRequired,
+    books: PropTypes.object.isRequired,
     viewport: PropTypes.object.isRequired,
     onSetTitle: PropTypes.func.isRequired,
     onSetMeta: PropTypes.func.isRequired,
@@ -51,6 +53,11 @@ class App {
       return React.createElement(NotFoundPage, page);
     }
 
+    //var books = BookStore.getBooks(page.title);
+    let books = this.props.books;
+    console.log(books);
+    console.log(page);
+    
     return (
       <div className="App">
         <Navbar />
@@ -66,7 +73,9 @@ class App {
             <h2>{page.title}</h2>
           </div>
         }
-        <ContentPage className="container" {...page} />
+        
+        <BookList books={books} />
+        
         <div className="navbar-footer">
           <div className="container">
             <p className="text-muted">
@@ -80,7 +89,7 @@ class App {
       </div>
     );
   }
-
+      //  <ContentPage className="container" {...page} />
   handlePopState(event) {
     AppActions.navigateTo(window.location.pathname, {replace: !!event.state});
   }

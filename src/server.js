@@ -17,7 +17,7 @@ import AppStore from './stores/AppStore';
 
 var server = express();
 
-server.set('port', (process.env.PORT || 5000));
+server.set('port', (process.env.PORT || 8080));
 server.use(express.static(path.join(__dirname)));
 
 //
@@ -42,6 +42,7 @@ server.get('*', function(req, res) {
   var data = {description: ''};
   var app = new App({
     path: req.path,
+    body: { results: { list: [ { title: "placeholder"} ]}},
     onSetTitle: function(title) { data.title = title; },
     onSetMeta: function(name, content) { data[name] = content; },
     onPageNotFound: function() { res.status(404); }

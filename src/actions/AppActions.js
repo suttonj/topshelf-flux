@@ -47,6 +47,22 @@ export default {
           cb();
         }
       });
-  }
+  },
+  
+  // Receive inital reading list data
+  receiveList(data) {
+    Dispatcher.handleServerAction({
+      actionType: ActionTypes.RECEIVE_DATA,
+      data: data
+    })
+  },
+
+  // Set currently selected product variation
+  selectProduct(index) {
+    Dispatcher.handleViewAction({
+      actionType: ActionTypes.SELECT_BOOK,
+      data: index
+    })
+  },
 
 };
