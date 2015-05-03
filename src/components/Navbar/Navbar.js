@@ -9,17 +9,28 @@
 import React from 'react'; // eslint-disable-line no-unused-vars
 
 class Navbar {
-
+  
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      if ($(document).scrollTop() > 100){  
+          $('header').addClass("sticky");
+      }
+      else{
+          $('header').removeClass("sticky");
+      }
+    });
+  }
+  
   render() {
     return (
-      <div className="navbar-top" role="navigation">
+      <header className="">
         <div className="container">
           <a className="navbar-brand row" href="/">
             <img src={require('./logo-small.png')} width="38" height="38" alt="React" />
             <span>React.js Starter Kit</span>
           </a>
         </div>
-      </div>
+      </header>
     );
   }
 

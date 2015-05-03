@@ -114,167 +114,126 @@ button[disabled]
     box-shadow: 0 5px 0 #7f8c8d;
 }
 
-button.view-cart
-{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-
-    width: auto;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-button.view-cart:active
-{
-    border-top: 5px solid #e67e22;
-}
-
-.mini-list
-{
-    width: 70%;
-    max-width: 280px;
-
-    -webkit-transition: .25s right ease;
-       -moz-transition: .25s right ease;
-        -ms-transition: .25s right ease;
-         -o-transition: .25s right ease;
-            transition: .25s right ease;
-
-    background: white;
-    box-shadow: 0 0 5px rgba(0,0,0,.5);
-}
-
-.active .mini-list
-{
-    right: 20px;
-}
-
-.mini-list h1
-{
-    font-size: 16px;
-
-    margin: 0;
-    padding: 0;
-}
-
-.mini-list ul
-{
-    margin: 0;
-    padding: 0;
-}
-
-.mini-list ul li
-{
-    margin: 0;
-    padding: 0;
-    padding: 20px;
-
-    list-style-type: none;
-
-    border-bottom: 1px solid #ddd;
-}
-
-.mini-list .close-list
-{
-    width: auto;
-    margin: 0;
-    padding: 0 5px 3px;
-
-    color: white;
-    background: #2c3e50;
+.panel {
+    border-radius: 4px;
+    -webkit-box-shadow: none;
     box-shadow: none;
+    height: 180px;
+    margin: 4px;
 }
 
-.mini-list span.total
-{
+.panel-default>.panel-body {
+    padding: 8px 8px 8px 2px;
+    text-align: left;
+}
+
+.panel-body h3 {
     font-size: 18px;
+    margin: 10px 0;
+}
 
+.panel-body p {
+    margin: 10px 0 10px 60px;
+    padding-left: 20px;
+    line-height: 1.2em;
+}
+
+.panel-body p img {
+    margin-left: -20px !important;
+}
+
+.tag:not(:last-child)::after  {
+    content: ", ";
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    white-space:pre;
+}
+
+.img-wrapper {
+    height: 150px;
+    width: 120px;
+    float: left;
+    background-repeat: no-repeat;
+}
+
+.img-wrapper img
+{
+    max-width:100%; 
+    max-height:100%;
+    margin:auto;
+    display:block;
+}
+
+.author {
     display: block;
-
-    width: 100%;
-    margin: 0;
-    padding: 20px;
-
-    color: white;
-    background: #2c3e50;
+    font-size: 16px;
+    padding-bottom: 6px;
 }
 
-.remove-item
-{
-    background: #e74c3c;
-    box-shadow: 0 5px 1px #a82315;
+.by {
+    display: inline;    
+    font-size: 11px;
 }
 
-.remove-item:hover
-{
-    background: #a82315;
-    box-shadow: 0 5px 1px #4d100a;
+.icon {
+    height: 16px !important;
+    margin: 0 !important;
+    margin-top: 0px !important;
+    margin-right: 4px !important;
+    opacity: 1;
 }
 
-.remove-item:active
-{
-    border-top: 5px solid white;
+.level {
+    margin: -2px 0 !important;
+    opacity: 1;
+    height: 28px;
+    width: 28px;
+    background: #F25C05;
+    border-radius: 14px;
+    display: inline-block;
+    color: #ffffff;
+    padding-top: 7px;
+    font-size: 12px;
+    text-align: center;
+    padding-left: 0 !important;
+}
+
+.search-wrapper {
+    position: relative;
+}
+
+.search-wrapper button {
+    position: absolute;
+    right: 0px;
+    top: 2px;
+}
+
+textarea:focus,
+input[type="search"]:focus {
+    border-color: #BBB;
+    box-shadow: none;
+    outline: 0 none;
+}
+
+.btn-link {
+    font-weight: 400;
+    color: #969696;
+    border-radius: 0;
+    border: none !important;
+}
+
+.btn:focus,
+.btn:active {
+    outline: solid 1px #F25C05 !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 3px #F25C05;
+}
+
+.btn-link:focus,
+.btn-link:active {
+    outline: none !important;
     box-shadow: none;
 }
-
-@media (max-width: 1280px)
-{
-    button.view-cart
-    {
-        position: relative;
-        top: auto;
-        right: auto;
-
-        width: 100%;
-    }
-}
-
-@media (max-width: 600px)
-{
-    .book img,
-    .book-detail
-    {
-        width: 100%;
-    }
-    .mini-list
-    {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        bottom: 0;
-
-        overflow: scroll;
-
-        width: 100%;
-        max-width: 100%;
-
-    }
-    .mini-list .close-list
-    {
-        font-size: 0;
-
-        position: relative;
-        top: auto;
-        right: auto;
-
-        width: 100%;
-        padding: 20px 0;
-
-        border-radius: 0;
-    }
-    .mini-list .close-list:after
-    {
-        font-size: 14px;
-
-        content: 'Close Cart';
-    }
-    .mini-list .close-list:active
-    {
-        border-top: none;
-    }
-    .active .mini-list
-    {
-        right: 0;
-    }
+.btn-link:hover {
+    color: #333333;
 }

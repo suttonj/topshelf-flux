@@ -5,7 +5,6 @@
 @import "../../node_modules/bootstrap/less/navbar.less";
 
 body {
-  padding: @navbar-height 0;
   overflow-y: scroll;
 }
 
@@ -26,6 +25,31 @@ body {
     display: inline;
   }
 }
+
+
+header {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  font-size: 72px;
+  line-height: 108px;
+  height: 128px;
+  z-index: 10;
+  background: #335C7D;
+  color: #fff;
+  font-family: 'Helvetica', sans-serif;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+header.sticky {
+  font-size: 24px;
+  line-height: 48px;
+  height: 48px;
+  text-align: left;
+  padding-left: 20px;
+}
+
 
 //
 // Navigation Footer
